@@ -12,7 +12,8 @@ class DknController extends IController {
   DknController addHandlers() {
     router
       ..get('/getNumbersList', _getNumbersList)
-      ..get('/getIdsList', _getIdsList);
+      ..get('/getIdsList', _getIdsList)
+      ..get('/getBankNotification', _getBankNotification);
 
     return this;
   }
@@ -27,6 +28,14 @@ class DknController extends IController {
   }
 
   Future<Response> _getIdsList(Request request) async {
+    var body = jsonEncode(await getManagersIdList());
+    print(body);
+    return Response.ok(
+      body,
+    );
+  }
+
+  Future<Response> _getBankNotification(Request request) async {
     var body = jsonEncode(await getManagersIdList());
     print(body);
     return Response.ok(
