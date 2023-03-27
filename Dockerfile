@@ -14,7 +14,9 @@ RUN dart compile exe bin/vpn-telegram-bot.source.dart -o bin/server
 
 # Build minimal serving image from AOT-compiled `/server`
 # and the pre-built AOT-runtime in the `/runtime/` directory of the base image.
-FROM scratch
+FROM ububtu:latest
+RUN apt -y update
+RUN apt -y install nano
 COPY --from=build /runtime/ /
 COPY --from=build /app/bin/server /app/bin/
 COPY /config.yaml ./
