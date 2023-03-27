@@ -13,7 +13,7 @@ class DknController extends IController {
     router
       ..get('/getNumbersList', _getNumbersList)
       ..get('/getIdsList', _getIdsList)
-      ..get('/getBankNotification', _getBankNotification);
+      ..post('/postBankNotification', _postBankNotification);
 
     return this;
   }
@@ -35,8 +35,8 @@ class DknController extends IController {
     );
   }
 
-  Future<Response> _getBankNotification(Request request) async {
-    var body = jsonEncode(await getManagersIdList());
+  Future<Response> _postBankNotification(Request request) async {
+    var body = jsonEncode(await request.readAsString());
     print(body);
     return Response.ok(
       body,
