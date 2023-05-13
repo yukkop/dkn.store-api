@@ -1,3 +1,0 @@
-﻿enum LayoutEnum {
-  ru
-}
