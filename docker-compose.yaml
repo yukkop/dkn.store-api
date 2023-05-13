@@ -1,7 +1,8 @@
 version: "3.9"
 services:
   telegram-bot:
-    network_mode: host
+    ports:
+      - 8085:7049
     container_name: vpn-telegram-bot
     build: .
     restart: always

@@ -24,5 +24,5 @@ COPY /layouts.yaml ./
 COPY /logs.log ./
 
 # Start server.
-EXPOSE 8081
+EXPOSE 7049
 CMD ["/app/bin/server"]
