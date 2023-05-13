@@ -1,9 +1,9 @@
 version: "3.9"
 services:
-  telegram-bot:
+  dkn.store-api:
     ports:
       - 8085:7049
-    container_name: vpn-telegram-bot
+    container_name: c1
     build: .
     restart: always
     volumes:
